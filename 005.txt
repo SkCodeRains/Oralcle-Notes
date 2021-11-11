@@ -1,0 +1,12 @@
+Oracle 19c Software Links:
+=======================
+https://www.oracle.com/in/database/technologies/oracle19c-windows-downloads.html
+		STEP1: DOWNLOAD
+		STEP2: UNZIP / EXTRACT
+		STEP3: FOLLOW THE FOLLOWING VIDEO
+
+
+
+		
+
+

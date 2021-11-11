@@ -1,0 +1,104 @@
+STEP2: SQL(STRUCTURE  QUERY LANGUAGE):
+========================================
+	- SQL IS USED COMMUNICATE WITH DB.
+	- IBM COMPANY ------> SEQUEL --------> RENAMED AS A SQL.
+	- SQL -----> PRE-DEFINE (STAND QUERY) QUERIES NOT A CASE SENSITIVE.
+	EX:
+	SELECT * FROM EMP;
+	select * from emp;
+	SELECT * from emp;
+	- SUB LANGUAGES OF SQL:
+
+1) DATA DEFINITION LANGUAGE(DDL)
+================================
+	- CREATE 
+	- ALTER
+	- RENAME
+	- TRUNCATE
+	- DROP
+
+2) DATA MANIPULATION LANGUAGE(DML):
+====================================
+	- INSERT
+	- UPDATE
+	- DELETE
+
+3) DATA RETRIEVAL / QUERY LANGUAGE(DRL / DQL):
+=============================================
+	- SELECT
+
+4) TRANSACTION CONTROL LANGUAGE(TCL):
+=======================================
+	- COMMIT
+	- ROLLBACK
+	- SAVEPOINT
+
+5) DATA CONTROL LANGUAGE(DCL):
+===============================
+	- GRANT
+	- REVOKE
+==============================================================================================
+HOW TO INSTAL ORACLE 19c SOFTWARE:
+====================================
+	STEP1 : DOWNLOAD ORACLE SOFTWARE (ZIP FORMAT FOLDER)
+	STEP2 : UNZIP FOLDER
+	STEP3 : FOLLOW THE FOLLWOING STEPS
+==============================================================================================
+HOW TO CONNECT TO ORALCE DB:
+===============================
+	> CLICK ON SQLPLUS ICON 
+		USERNAME	: SYSTEM
+		PASSWORD	: TIGER
+	CONNECTED.
+
+CREATE:
+=======
+	- CREATING A NEW TABLE IN ORALCE DB.
+
+SYNTAX:
+=======
+CREATE TABLE <TABLE NAME>(<COLUMN NAME1> <DATATYPE>[SIZE],<COLUMN NAME2> <DATATYPE>[SIZE],
+<COLUM NAME3> <DATATYPE>[SIZE],..............................................................................................);
+
+NOTE :
+======
+> WITHOUT DATATYPES WE CANNOT CREATE A NEW TABLE IN DB.
+				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,719 @@
+STEP2: SQL(STRUCTURE  QUERY LANGUAGE):
+========================================
+	- SQL IS USED COMMUNICATE WITH DB.
+	- IBM COMPANY ------> SEQUEL --------> RENAMED AS A SQL.
+	- SQL -----> PRE-DEFINE (STAND QUERY) QUERIES NOT A CASE SENSITIVE.
+	EX:
+	SELECT * FROM EMP;
+	select * from emp;
+	SELECT * from emp;
+	- SUB LANGUAGES OF SQL:
+
+1) DATA DEFINITION LANGUAGE(DDL)
+================================
+	- CREATE 
+	- ALTER
+	- RENAME
+	- TRUNCATE
+	- DROP
+
+2) DATA MANIPULATION LANGUAGE(DML):
+====================================
+	- INSERT
+	- UPDATE
+	- DELETE
+
+3) DATA RETRIEVAL / QUERY LANGUAGE(DRL / DQL):
+=============================================
+	- SELECT
+
+4) TRANSACTION CONTROL LANGUAGE(TCL):
+=======================================
+	- COMMIT
+	- ROLLBACK
+	- SAVEPOINT
+
+5) DATA CONTROL LANGUAGE(DCL):
+===============================
+	- GRANT
+	- REVOKE
+==============================================================================================
+HOW TO INSTAL ORACLE 19c SOFTWARE:
+====================================
+	STEP1 : DOWNLOAD ORACLE SOFTWARE (ZIP FORMAT FOLDER)
+	STEP2 : UNZIP FOLDER
+	STEP3 : FOLLOW THE FOLLWOING STEPS
+==============================================================================================
+HOW TO CONNECT TO ORALCE DB:
+===============================
+	> CLICK ON SQLPLUS ICON 
+		USERNAME	: SYSTEM
+		PASSWORD	: TIGER
+	CONNECTED.
+
+CREATE:
+=======
+	- CREATING A NEW TABLE IN ORALCE DB.
+
+SYNTAX:
+=======
+CREATE TABLE <TABLE NAME>(<COLUMN NAME1> <DATATYPE>[SIZE],<COLUMN NAME2> <DATATYPE>[SIZE],
+<COLUM NAME3> <DATATYPE>[SIZE],..............................................................................................);
+
+NOTE :
+======
+> WITHOUT DATATYPES WE CANNOT CREATE A NEW TABLE IN DB.
+
+DATATYPES IN ORACLE:
+=====================
+	DATATYPE IS AN ATTRIBUTE WHICH WILL SPECIFY WHAT TYPE OF DATA IS STORING INTO A COLUMN.ORACLE SUPPORTING THE FOLLOWING DATATYPES ARE,
+
+	> NUMERIC DATATYPES
+	> CHARACTER DATATYPES / STRING DATATYPES
+	> LONG DATATYPE
+	> DATE DATATYPES
+	> RAW & LONG RAW DATATYPES
+	> LOB DATATYPES(LOB : LARGE OBJECTS )
+
+NUMERIC DATATYPES:
+====================
+	i) INT
+	ii) NUMBER(P,S)
+
+i) INT :
+======
+	- STORING INTEGER FORMAT DATA.
+	- WHEN WE USE "INT" DATATYPE ON A PARTICULAR COLUMN AT TIME OF DESIGNING INTERNALLY
+	ORACLE SERVER IS CONVERTING INTO "NUMBER" DATATYPE WITH SIZE IS 38 DIGITS.
+		=====================
+		||i.e INT = NUMBER(38) ||
+		=====================
+
+
+ii) NUMBER(P,S):
+==============
+	- STORING INTEGER & FLOAT VALUES.
+	- WHEN WE USE 
+		> NUMBER(P) : ------> INTERGER VALUES
+		> NUMBER(P,S) : ----> FLOAT VALUES
+
+PRECISION(P):
+============
+	- COUNTING ALL DIGITS INCLUDING LEFT & RIGHT SIDES OF A DECIMAL POINT IN THE GIVEN 	EXPRESSION.
+
+	Ex: 	i) 67.23			ii) 897.23			iii) 7678.243
+
+		PRECISION = 4		PRECISION = 5		PRECISION = 7
+
+SCALE(S):
+=========
+	- COUNTING THE RIGHTS SIDE DIGITS ONLY.
+
+	Ex:	i) 67.23			ii) 7678.243
+		PRECISION = 4		PRECISION = 7
+		SCALE = 2		SCALE = 3
+
+2) CHARACTER / STRING DATATYPES:
+================================
+	- STORING "STRING" FORMAT DATA ONLY.
+	- STRING IS REPRESENT WITH  '<STRING> '. 
+
+
+	Ex:	EMP_NAME CHAR(10)
+		==================
+	SAI --------> NOT ALLOWED (ERROR)
+	'SAI'--------> ALLOWED 
+
+				CHARACTER / STRING DATATYPES
+					       |
+
+			CHARACTERS ONLY 		ALPHANUMERIC CHARACTERS
+			STRING FORMAT DATA		STRING FORMAT DATA
+				|				|
+			[ A -Z (OR) a - z ]			[ A-Z (OR) a-z , 0-9,@,#,$,%,&,_,.,....etc ]
+			EX: 'SAI'				EX: 'sai123@gmail.com '
+
+
+	- THESE DATATYPES ARE CLASSIFIED INTO TWO WAYS:
+
+1) NON-UNICODE DATATYPES:
+=========================
+	NON - UNIVERSAL  = LOCAL 
+	UNIVERSAL               = GLOBAL
+
+> ARE STORING "LOCALIZED DATA" (ENGLISH LANGUAGE ONLY)
+
+	i) CHAR(SIZE)
+	ii) VARCHAR2(SIZE)	
+
+2) UNICODE DATATYPES:
+=====================
+> ARE STORING "GLOBALIZED DATA"( ALL NATIONAL LANGUAGEs )
+			
+	i) nCHAR(SIZE)
+	ii) nVARCHAR2(SIZE)
+
+NOTE: Here " n"  IS REPRESENT "NATIONAL"
+=====
+
+NON-UNICODE DATATYPES:
+========================
+1) CHAR(SIZE):
+============
+- FIXED LENGTH DATATYPE(STATIC).
+- WILL STORE NON-UNICODE CHAR's IN THE FORM OF 1 CHAR =1 BYTE.
+- TO WASTED MEMORY
+- MAX.SIZE IS 2000 BYTES (2000 CX 2000 B)
+
+2) VARCHAR2(SIZE):
+==================
+- VARIABLE LENGTH DATATYPE(DYNAMIC)
+- WILL STORE NON-UNICODE CHAR's IN THE FORM OF 1 CHAR =1 BYTE.
+- TO SAVE MEMORY
+- MAX.SIZE IS 4000 BYTES(4000 C X 4000 B)
+
+
+UNICODE DATATYPES:
+====================
+1) nCHAR(SIZE):
+============
+- FIXED LENGTH DATATYPE(STATIC).
+- WILL STORE UNICODE CHAR's(ALL NATIONAL LANG's ) IN THE FORM OF 1 CHAR =1 BYTE.
+- TO WASTED MEMORY
+- MAX.SIZE IS 2000 BYTES (2000 CX 2000 B)
+
+2) nVARCHAR2(SIZE):
+==================
+- VARIABLE LENGTH DATATYPE(DYNAMIC)
+- WILL STORE UNICODE CHAR's IN THE FORM OF 1 CHAR =1 BYTE.
+- TO SAVE MEMORY
+- MAX.SIZE IS 4000 BYTES(4000 C X 4000 B)
+
+LONG DATATYPE:
+===============
+- VARABLE LENGTH DATATYPE(DYNAMIC)
+- WILL STORE NON-UNICODE & UNICODE CHAR's IN THE FORM OF 1 CHAR= 1 BYTE.
+- MAX SIZE IS 2 GB.
+
+DATE DATATYPE:
+===============
+	- STORING DATE & TIME INFORMATION OF A PARTICULAR DAY BUT TIME OPTIONAL.WHEN USER IS 	NOT ENTER TIME THEN ORACLE WILL BY DEFAULT TIME IS '12:00:00am'.
+	- DEFAULT DATE & TIME FORMAT IN ORACLE DB IS,
+		' DD-MON-YYYY / YY HH:MI:SS '
+	- IT OCCUPIED FIXED MEMORY IS 7 BYTES.
+
+		' DD-MON-YYYY / YY HH:MI:SS '
+		   1      1         2                1     1     1
+
+TIMESTAMP:
+===========
+	- STORING DATE & TIME INFORMATION ALONG WITH MILLISECONDS.
+		' DD-MON-YYYY / YY HH:MI:SS.MS'
+	- IT OCCUPIED FIXED MEMORY IS 11 BYTES.
+
+		' DD-MON-YYYY / YY HH:MI:SS.MS'
+		    1       1        2               1      1   1    4
+
+
+RAW & LONG RAW:
+================
+	- THESE ARE CALLED AS BINARY DATATYPES IN ORACLE.
+	- STORING AUDIO FILE / VIDEO FILE / IMAGE FILE IN THE FORM OF 0100101010010101001 BINARY 	FORMAT.
+		RAW		- 2000 BYTES
+		LONG RAW	- 2 GB
+
+LOB DATATYPES(LARGE OBJECTS):
+===============================
+i) BLOB(BINARY LARGE OBJECT)
+============================
+	- THIS DATATYPE IS STORING AUDIO / VIDEO / IMAGE FILE IN THE FORM OF 01001010001010 BINARY 	FROMAT.
+	- MAX.SIZE IS 4 GB.
+
+
+ii) CLOB(CHARACTER LARGE OBJECT):
+==================================
+	- STORING NON-UNICODE CHAR's
+	- MAX SIZE IS 4GB
+
+iii) nCLOB(NATIONAL CHARACTER LARGE OBJECT)
+============================================
+	- STORING UNICODE CHAR's
+	- MAX SIZE 4 GB.
+==============================================================================================
+
+NON -UNICODE CHAR's STORING CAPACITY:
+======================================
+	CHAR(SIZE)	- 2000 BYTES
+	VARCHAR2(SIZE)	- 4000 BYTES
+	LONG 		- 2 GB
+	CLOB		- 4GB
+
+UNICODE CHAR's STORING CAPACITY:
+======================================
+	nCHAR(SIZE)	- 2000 BYTES
+	nVARCHAR2(SIZE)	- 4000 BYTES
+	LONG 		- 2 GB
+	nCLOB		- 4GB
+
+BINARY DATA STORING CAPACITY:
+===============================
+	RAW		- 2000 BYTES
+	LONG RAW	- 2GB
+	BLOB		- 4GB
+===============================================================================================
+CREATE:
+=======
+	- CREATING A NEW TABLE IN ORALCE DB.
+
+SYNTAX:
+=======
+CREATE TABLE <TABLE NAME>(<COLUMN NAME1> <DATATYPE>[SIZE],<COLUMN NAME2> <DATATYPE>[SIZE],
+<COLUM NAME3> <DATATYPE>[SIZE],..............................................................................................);
+
+EX:
+CREATE TABLE STUDENTS(STID INT,SNAME CHAR(10),SFEE NUMBER(10));
+
+TO VIEW THE STRC. OF A TABLE IN ORACLE:
+======================================
+SYNTAX:
+=======
+DESC <TABLE NAME>;
+
+EX:
+DESC STUDENTS;
+
+ALTER:
+=====	
+	- TO CHANGE / MODIFY THE STRC.OF TABLE.
+	- HAVING FOUR SUB - COMMANDS OF ALTER
+
+1) ALTER - MODIFY:
+================
+	- TO CHANGE DATATYPE & SIZE OF DATATYPE OF A PARTICULAR COLUMN IN TABLE.
+
+SYNTAX:
+========
+ALTER TABLE <TN> MODIFY <COLUMN NAME> <NEW DATATYPE>[NEW SIZE];
+
+EX:
+ALTER TABLE STUDENTS MODIFY SNAME VARCHAR2(20);
+
+2) ALTER - ADD:
+=============
+	- TO ADD A NEW COLUMN TO AN EXISTING TABLE.
+
+SYNTAX:
+=======
+ALTER TABLE <TN> ADD <NEW COLUMN NAME> <DATATYPE>[SIZE];
+
+EX:
+
+3) ALTER - RENAME:
+=================
+	- TO RENAME A COLUMN NAME.
+SYNTAX:
+=======
+ALTER TABLE <TN> RENAME <COLUMN> <OLD COLUMN NAME> TO <NEW COLUMN NAME>;
+
+EX:
+
+4) ALTER - DROP:
+===============
+	- TO DROP A COLUMN FROM A TABLE.
+
+SYNTAX:
+=======
+ALTER TABLE <TN> DROP <COLUMN> <COLUMN NAME>;
+
+EX:
+
+RENAME:
+========
+	- TO RENAME A TABLE NAME.
+
+SYNTAX:
+========
+RENAME <OLD TABLE NAME> TO <NEW TABLE NAME>;
+
+EX:
+
+
+TRUNCATE:
+==========
+	- TO DELETE ALL ROWS DATA FROM A TABLE AT A TIME.
+	- ROWS BUT NOT COLUMNS
+	- CANNOT DELETE A SPECIFIC ROW DATA FROM A TABLE BCZ IT NOT SUPPORTING "WHERE 	CLAUSE"CONDITION.
+	- ROWS DATA PERMANENTLY.
+
+SYNTAX:
+=======
+TRUNCATE TABLE <TN>;
+
+DROP:
+=====
+	- TO DROP / DELETE A TABLE(ROWS & COLUMNS) FROM DATABASE.
+
+SYNTAX:
+=======
+DROP TABLE <TN>;
+
+	- FROM ORACLE 10g ENTERPRISE EDITION ONCE WE DROP A TABLE 
+	FROM DATABASE THEN IT IS TEMPORARY DELETED / DROP.
+
+
+NEW FEATURES IN ORACLE 10g ENTERPRISE EDITION:
+===============================================
+1. RECYCLEBIN:
+==============
+	- IS A SYSTEM DEFINE TABLE WHICH IS USED TO STORE THE INFORMATION ABOUT DROPED TABLES.
+
+TO VIEW STRC. OF RECYCLEBIN:
+============================
+DESC RECYCLEBIN;
+
+
+
+2. FLASHBACK:
+==============
+	- THIS COMMAND IS USED TO RESTORE DROPED TABLE INTO DB.
+
+SYNTAX:
+=======
+FLASHBACK TABLE <TN> TO BEFORE DROP;
+
+3. PURGE:
+=========
+	- THIS COMMAND IS USED TO DROP A TABLE PERMANENTLY FROM DATABASE OR RECYCLEBIN.
+
+SYNTAX1: DROPING A SPECIFIC TABLE FROM RECYCLEBIN;
+===================================================
+PURGE TABLE <TABLE NAME>;
+
+EX:
+
+SYNTAX2: DROPING ALL TABLES FROM RECYCLEBIN;
+=============================================
+PURGE RECYCLEBIN;
+
+SYNTAX3: DROPING TABLE FROM DATABASE PERMANENTLY:
+=====================================================
+DROP TABLE <TABLE NAME> PURGE;
+
+
+2.DML:
+======
+INSERT:
+=======
+	- TO INSERT A NEW ROW DATA INTO A TABLE.
+
+SYNTAX1:
+========
+INSERT INTO <TN> VALUES(VALUE1,VALUE2,.............);
+
+NOTE: NO.OF COLUMNS = NO.OF VALUES
+
+SYNTAX2:
+========
+INSERT INTO <TN>(<COLUMN NAME1>,<COLUMN NAME2>,......)VALUES(VALUE1,VALUE2,.....);
+
+NOTE: USER CAN INSERT VALUES FOR REQ. COLUMNS ONLY.REMAINING COLUMNS ARE TAKING BY DEFAULT 
+"NULL".
+
+
+
+UPDATE:
+========
+	- TO UPDATE ALL ROWS DATA IN A TABLE AT  A TIME.
+		(OR)
+	- TO UPDATE A SPECIFIC ROW DATA IN A TABLE BY USING "WHERE CLAUSE" CONDITION.
+
+SYNTAX:
+=======
+UPDATE <TN> SET <COLUMN NAME1>=<VALUE1>,<COLUMN NAME2>=<VALUE2>,........[ WHERE <CONDITION> ];
+
+
+
+DELETE:
+=======
+	- TO DELETE ALL ROWS FROM A TABLE AT A TIME
+		(OR)
+	- TO DELETE A SPECIFIC ROW DATA FROM A TABLE BY USING "WHERE CLAUSE" CONDITION.
+SYNTAX:
+=======
+DELETE FROM <TN> [ WHERE <CONDITION>];
+
+DIFF.BETWEEN DELETE Vs TRUNCATE ?
+==================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

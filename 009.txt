@@ -1,0 +1,656 @@
+OPERATORS IN ORALCE:
+=====================
+	- TO PERFORM SOME OPERATIONS ON GIVEN OPERAND VALUES.
+
+1. ASSIGNMENT OPERATOR		=>	=
+2. ARITHMETIC OPERATORS		=>	+ , - , * , /
+3. RELATIONAL / COMPARISON OPERA	=>	< , > , <= , >=, != 
+4. LOGICAL OPERATORS		=>	AND,OR,NOT
+5. SET OPERATORS			=>	UNION,UNION ALL,INTERSECT,MINUS
+
+6. SPECIAL OPERATORS		=>	(+ve) OPERATOR		(-ve) OPERATORS
+					==============		================
+					IN			NOT IN
+					BETWEEN		NOT BETWEEN
+					IS NULL			IS NOT NULL
+					LIKE			NOT LIKE
+
+
+1. ASSIGNMENT OPERATOR:
+========================
+	- TO ASSIGN A VALUE TO VARIABLE / TO ATTRIBUTE(COLUMN)
+
+SYNTAX:
+=======
+	<COLUMN NAME> <ASSIGNMENT OPERATOR> <VALUE>
+
+EX:
+SELECT * FROM EMP WHERE EMPNO = 7788 ;
+
+2. ARITHEMATIC OPERATORS:
+==========================
+	- TO PERFORM MATHEMATICAL OPERATIONS LIKE ADD,SUB,MUL ,DIV.
+
+SYNTAX:
+=======
+	<COLUMN NAME> <ARITHMETIC OPERATOR> <VALUE>
+
+EX:
+WAQ TO DISPLAY ALL EMPLOYEE SALARIES AFTER ADDING 1000 ?
+
+EX:
+WAQ TO DISPLAY ENAME,SALARY AND ANNUAL SALARY OF EMPLOYEE FROM EMP TABLE?
+
+EX:
+WAQ TO DISPLAY EMPLOYEE SALARIES AFTER INCREMENT WITH 10% WHO ARE WORKING IN DEPTNO IS 20 ?
+
+3) RELATIONAL OPERATORS:
+=========================
+	- COMPARING A SPECIFIC COLUMN VALUES WITH USER DEFINE CONDITION IN QUERY.
+
+EX:
+WAQ TO DISPLAY LIST EMPLOYEE WHOSE SALARY IS MORE THAN 2500 ?
+
+
+LOGICAL OPERATORS:
+====================
+	- TO CHECK MORE THAN ONE CONDITION.
+	- AND , OR , NOT 
+
+AND:
+=====
+	- IT RETURNS A VALUE WHEN ALL CONDITIONS ARE TRUE IN THE GIVEN QUERY.
+
+COND1	COND2
+======	=======
+T	T	T
+T	F	F
+F	T	F
+F	F	F
+
+EX:
+WAQ TO DISPLAY EMPLOYEE WHO ARE WORKING IN JOB IS "CLERK" AND WHOSE NAME IS "SMITH" ?
+
+OR:
+===
+	- IT RETURNS A VALUE IF ANY ONE CONDITION IS TRUE IN THE GIVEN QUERY.
+
+COND1	COND2
+======	======
+T	T	T
+T	F	T
+F	T	T
+F	F	F
+
+EX:
+WAQ TO DISPLAY EMPLOYEE WHOSE EMPNO IS 7369,7788,7566 ?
+
+NOT:
+====
+	- IT RETURNS ALL VALUES EXCEPT THE GIVEN CONDITIONAL VALUES IN THE QUERY.
+
+EX:
+WAQ TO DISPLAY EMPLOYEE WHO ARE NOT WORKING IN JOB IS "CLERK" AND "SALESMAN" ?
+
+
+6. SPECIAL OPERATORS		=>	(+ve) OPERATOR		(-ve) OPERATORS
+					==============		================
+					IN			NOT IN
+					BETWEEN		NOT BETWEEN
+					IS NULL			IS NOT NULL
+					LIKE			NOT LIKE
+
+
+IN :
+===
+	- COMPARING THE LIST OF VALUES IN THE GIVEN CONDITION.
+	- IF A VALUE IS AVAIABLE IN THE LIST THEN IT RETURNS TRUE OTHERWISE RETURNS FALSE.
+
+EX:
+WAQ TO DISPLAY LIST OF EMPLOYEE WHO ARE WORKING IN THE JOB IS "MANAGER","ANALYST","PRESIDENT"?
+
+BETWEEN:
+=========
+	- WORKING ON THE GIVEN RANGE VALUE.
+
+BASIC RULES:
+============
+1. RETURNS VALUES INCLUDING SOURCE & DESTINATION VALUES. 
+BETWEEN 10 - 20 
+	> 10,11,12,................,19,20 ------------ OK
+	> 11,12,.....................,18,19------------ X 
+
+2. IS ALWAYS WORK ON LOW TO HIGH
+BETWEEN 20 - 10
+	> 10,11,12,................,19,20 -------------X
+	> 11,12,.....................,18,19------------X
+	> 20,19,........................,11,10---------X
+	> 19,18,........................,12,11----------X
+	> NO RETURN VALUE-------OK
+
+3. CAN IMPLEMENT WITH "AND" OPERATOR ONLY.
+
+EX:
+WAQ TO DISPLAY EMPLOYEE WHOSE SALARY BETWEEN 1500 AND 3000?
+
+IS NULL:
+=======
+	- COMPARING "NULL" IN A TABLE COLUMN.
+
+EX:
+WAQ TO DISPLAY EMPLOYEE WHOSE COMMISSION IS 0 ?
+
+NOTE:
+=====
+1. NULL IS A UNKNOW / UNDEFINE VALUE IN DB.
+
+	IN DB 
+		> INT,FLOAT,STRING CHAR,STRING ALPHA,DATE,TIME,BINARY
+
+
+= ,< ,>,..........NOT SUPPORT
+
+2. NULL != 0 , NULL != SPACE
+==============================================================================================
+EX:
+WAQ TO DISPLAY ENAME,JOB,SAL,COMM AND SAL+COMM WHOSE ENAME NAME IS "SMITH" ?
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
